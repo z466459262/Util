@@ -11,11 +11,16 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Emoji表情处理类
+ *
+ * 说明：
  * 此类用于数据库如果使用urf8 保存emoji表情报错的情况,原因是emoji是utf8但数据库的utf8太短，保存不了全部的emoji表情
  * 要么把数据库改成utf8mb4,要么使用此类进行转换，利用的是html的unicode的显示表达方式做变通处理
+ *
+ * 使用步骤：
  * 1.使用containsEmoji()判断是否有emoji表情
  * 2.使用convertEmojiToUnicode()转化emoji表情成unicode 显示编码
- * 
+ * 3.若需求只需要纯文本，则直接使用 filterEmoji
+ *
  * @author zhouwenzhe
  *
  */
